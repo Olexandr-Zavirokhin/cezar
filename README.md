@@ -1,5 +1,5 @@
 # cezar
-Prograp for encrypt decrypt and brud force your text file.
+Programm for encrypt decrypt and brud force your text file.
 
 You can enter the path, command, and key at the start of the program, or you can enter it gradually in dialog mode;
 
@@ -17,7 +17,7 @@ AlphaBetsList - conteins all alphabet arrays ;
 
 InformationForUserToRead - information; CLI - dialog console with Path Console command and console key;
 
-Enum Console command: [ENCRYPT, DECRYPT, BRUTE_FORCE, EXIT];
+Enum Console command: [ENCRYPT, DECRYPT, BRUTE_FORCE, EXIT] - all console command;
 
 Enum TextLanguage - all programm language;
 
