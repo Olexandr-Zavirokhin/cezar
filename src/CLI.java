@@ -14,6 +14,10 @@ public class CLI {
         this.consoleKey = 0;
     }
 
+    public void setConsoleCommand(ConsoleCommand consoleCommand) {
+        this.consoleCommand = consoleCommand;
+    }
+
     public void setCLI() {
         setConsolePath();
         setConsoleCommand();
@@ -30,34 +34,6 @@ public class CLI {
 
     public void setConsolePath(Path consolePath) {
         this.consolePath = consolePath;
-    }
-
-    private void setConsolePath(String consolePath) {
-        this.consolePath = Path.of(consolePath);
-    }
-
-    private void setConsolePath() {
-        boolean rightPath = false;
-        int numberOfAttemptsToEnterRightPath = 3;
-        Scanner console = new Scanner(System.in);
-        while (!rightPath) {
-            System.out.println("\n\tEnter absolute path to your file");
-            String consolePathString = console.nextLine();
-            Path consolePath = Path.of(consolePathString);
-            if (Files.exists(consolePath)) {
-                System.out.println("You enter right Path");
-                this.setConsolePath(consolePath);
-                rightPath = true;
-            } else {
-                if (numberOfAttemptsToEnterRightPath > 0) {
-                    System.out.println("\n\tYou enter wrong path, try again" +
-                            " \n\t You have  " + numberOfAttemptsToEnterRightPath + " attempts");
-                    numberOfAttemptsToEnterRightPath--;
-                } else {
-                    rightPath = true;
-                }
-            }
-        }
     }
 
     public ConsoleCommand getConsoleCommand() {
@@ -134,7 +110,33 @@ public class CLI {
         }
         return ConsoleCommand.EXIT;
     }
+    private void setConsolePath(String consolePath) {
+        this.consolePath = Path.of(consolePath);
+    }
 
+    private void setConsolePath() {
+        boolean rightPath = false;
+        int numberOfAttemptsToEnterRightPath = 3;
+        Scanner console = new Scanner(System.in);
+        while (!rightPath) {
+            System.out.println("\n\tEnter absolute path to your file");
+            String consolePathString = console.nextLine();
+            Path consolePath = Path.of(consolePathString);
+            if (Files.exists(consolePath)) {
+                System.out.println("You enter right Path");
+                this.setConsolePath(consolePath);
+                rightPath = true;
+            } else {
+                if (numberOfAttemptsToEnterRightPath > 0) {
+                    System.out.println("\n\tYou enter wrong path, try again" +
+                            " \n\t You have  " + numberOfAttemptsToEnterRightPath + " attempts");
+                    numberOfAttemptsToEnterRightPath--;
+                } else {
+                    rightPath = true;
+                }
+            }
+        }
+    }
     private void setConsoleCommand() {
         boolean rightCommand = false;
         int numberOfAttemptsToEnterRightCommand = 3;

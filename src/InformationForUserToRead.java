@@ -11,7 +11,11 @@ public class InformationForUserToRead {
             "\n" +
             "filepath - absolute (full) path to the file to be encoded.\n" +
             "\n" +
-            "key - an integer, the key for shifting the alphabet.\n";
+            "key - an integer, the key for shifting the alphabet.\n" +
+            "\n" +
+            "if program write brut force file with key=0 - programme can not brut force file.\n"+
+            "\n" +
+            "if program exit without write file - try start program without arguments and to do it step by step in console.\n";
 
     public void getSTART_INFORMATION() {
         printInformation(START_INFORMATION);

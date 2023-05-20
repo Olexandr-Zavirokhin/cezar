@@ -37,11 +37,17 @@ public class BrutForce extends TextFileWithLanguageIdentification {
 
     public int getBrutForceKey() {
         int brutForceKey = 0;
+        int countMaximumTryToBrutForceKey=20;
+        int countOfTry=0;
         boolean isRightBrutForce = false;
         while (!isRightBrutForce) {
             brutForceKey =getBrutForceKey(brutForceKey);
             isRightBrutForce = canRead(this.getDecryptedList(brutForceKey).get(0));
-
+            countOfTry++;
+            if(countOfTry==countMaximumTryToBrutForceKey){
+                brutForceKey = 0;
+                isRightBrutForce=true;
+            }
         }
         return brutForceKey;
     }
