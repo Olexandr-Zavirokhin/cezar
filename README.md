@@ -11,7 +11,9 @@ Brut Force during execution needs additional confirmation in decryption otherwis
 
 file Path + command + key - this is the order in which you need to write your file path command and your encryption key ;
 
-FilePath command - if you write command BRUT_FORCE; Launching the program itself from the console will look like java -jar myApp.jar filePath command key;
+FilePath command - if you write command BRUT_FORCE;
+
+Launching the program itself from the console will look like java -jar myApp.jar filePath command key;
 
 AlphaBetsList - conteins all alphabet arrays ;
 
