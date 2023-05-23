@@ -8,7 +8,7 @@ public class Main {
         CLI console = new CLI();
         if (args.length > 2) {
             console.setCLiString(args[0], args[1], args[2]);
-        } else if (args.length==2) {
+        } else if (args.length == 2) {
             console.setCLiString(args[0], args[1], String.valueOf(0));
         } else {
             console.setCLI();
@@ -18,7 +18,9 @@ public class Main {
         var languageIdentification = new LanguageIdentification();
         textFileWithLanguageIdentification
                 .setTextLanguage(languageIdentification.identificationTextLanguage(textFileWithLanguageIdentification));
-
+        if (textFileWithLanguageIdentification.textLanguage == TextLanguage.UNKNOWN) {
+            console.setConsoleCommand(ConsoleCommand.EXIT);
+        }
         switch (console.getConsoleCommand()) {
             case ENCRYPT -> {
                 fileService.writeListStringToFile
